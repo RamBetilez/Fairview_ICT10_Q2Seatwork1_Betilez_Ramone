@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://pyscript.net/releases/2025.3.1/core.css">
+    <script type="module" src="https://pyscript.net/releases/2025.3.1/core.js"></script>
+
+    <title>University Application</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: 'Gill Sans', sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            background:
+                linear-gradient(rgba(9, 25, 55, 0.75),
+                rgba(9, 25, 55, 0.85)),
+                url('https://www.nexford.edu/hubfs/AI-Generated%20Media/Images/photographic%20University%20Picture%20new%20image%20aside%20from%20the%20previous%20generated%20wo%20words%20just%20pure%20image%20of%20school-1.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        nav {
+            background-color: #0b1f40;
+            color: white;
+            padding: 18px 8%;
+            border-bottom: 3px solid #d6b46a;
+        }
+
+        nav h2 {
+            margin: 0;
+            letter-spacing: 2px;
+        }
+
+        nav p {
+            margin: 5px 0 0;
+            color: #d6b46a;
+            font-size: 13px;
+            letter-spacing: 1px;
+        }
+
+        .container {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 35px 20px;
+        }
+
+        .card {
+            width: 100%;
+            max-width: 460px;
+        }
+
+        form {
+            padding: 35px;
+            background-color: white;
+            color: #172b4d;
+            border-radius: 14px;
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
+            border-top: 5px solid #d6b46a;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 28px;
+        }
+
+        .header .symbol {
+            width: 80px;
+            height: 75px;
+            margin: 0 auto 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #0b1f40;
+            color: #d6b46a;
+            border-radius: 50%;
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        .header h1 {
+            font-size: 25px;
+            margin: 0 0 12px;
+        }
+
+        .header p {
+            color: #697386;
+            font-size: 14px;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .inputs {
+            margin-bottom: 22px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 7px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 13px;
+            margin-bottom: 18px;
+            border: 1px solid #d5dce5;
+            border-radius: 7px;
+            background-color: #f7f9fc;
+            color: #172b4d;
+            font-size: 15px;
+            outline: none;
+        }
+
+        input[type="text"]:focus {
+            border-color: #1b3b69;
+            background-color: white;
+        }
+
+        input::placeholder {
+            color: #9ba5b4;
+        }
+
+        .footer button {
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 7px;
+            background-color: #0b1f40;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .footer button:hover {
+            background-color: #193b6a;
+        }
+
+        .result {
+            margin-top: 18px;
+            padding: 16px;
+            border-radius: 9px;
+            background-color: rgba(255, 255, 255, 0.96);
+            color: #172b4d;
+            text-align: center;
+            font-size: 14px;
+            line-height: 1.6;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        footer {
+            padding: 15px;
+            background-color: #0b1f40;
+            color: #d8deea;
+            text-align: center;
+            font-size: 12px;
+            letter-spacing: 1px;
+        }
+
+        @media (max-width: 500px) {
+            form {
+                padding: 25px 20px;
+            }
+
+            .header h1 {
+                font-size: 22px;
+            }
+
+            nav {
+                padding: 16px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <h2>RAM UNIVERSITY</h2>
+        <p>RAM • RAMS • AND RAM</p>
+    </nav>
+
+    <div class="container">
+        <div class="card">
+
+            <form>
+                <div class="header">
+                    <div class="symbol">RAM</div>
+
+                    <h1>Application Status</h1>
+
+                    <p>
+                        Welcome to the Ram University!
+                    </p>
+                </div>
+
+                <div class="inputs">
+                    <label for="firstname">First Name</label>
+                    <input
+                        type="text"
+                        id="firstname"
+                        placeholder="Enter your first name"
+                    >
+
+                    <label for="lastname">Last Name</label>
+                    <input
+                        type="text"
+                        id="lastname"
+                        placeholder="Enter your last name"
+                    >
+                </div>
+
+                <div class="footer">
+                    <button type="button" id="loginBTN" py-click="verify">
+                        Check Application
+                    </button>
+                </div>
+            </form>
+
+            <div id="result" class="result">
+                Please enter your First and Last name.
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2026 RAM UNIVERSITY
+        | APPLICATION PORTAL
+    </footer>
+
+    <script type="py" src="main.py"></script>
+
+</body>
+</html>
